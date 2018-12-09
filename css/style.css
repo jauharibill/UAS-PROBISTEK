@@ -1,51 +1,75 @@
- body, html {
-    height: 100%;
+body,
+html {
+    /* height: 100%;
     margin: 0;
     font-weight: 400;
     line-height: 1.8em;
-    color: #666;
+    color: #666; */
     font-family: helvetica;
-        }
-        .image {
-            padding-top: 25px;
-            padding-bottom: 25px;
-        }
-        .col-6.contact {
-            padding-top: 40px;            
-            margin-bottom: 0%;
-        }
-        #contact1 {
-            color: #58585A;
-            text-align: right;
-            font-size: 21px;
-            margin-bottom: 0px;
-        }   
-        table.contact2 {
-            float: right;
-            margin-top: 0%;
-            padding-right: 0px;
-            color: #808080;
-        }
-        .navbar {
-            background-color: #0093dd !important;
-            font-size: 17px;
-            font-weight: bold;
-            color: #0093dd;
-        }
-        .navbar-nav {
-            padding-left: 110px;
-        }
-        #adminBtn {
-            margin-right: 110px;
-        }
+}
 
-.pimg1, .pimg2, .pimg3{
+.image {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.col-6.contact {
+    padding-top: 40px;
+    margin-bottom: 0%;
+}
+
+#contact1 {
+    color: #58585A;
+    text-align: right;
+    font-size: 21px;
+    margin-bottom: 0px;
+}
+
+table.contact2 {
+    float: right;
+    margin-top: 0%;
+    padding-right: 0px;
+    color: #808080;
+}
+
+.navbar {
+    background-color: #0093dd !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    color: black !important;
+}
+
+.navbar-nav {
+    padding-left: 109px !important;
+}
+
+#adminBtn {
+    margin-right: 111px !important;
+    color: #fff;
+}
+
+.login {
+    background-color: #F7F7F7;
+    font-weight: bolder;
+    height: auto;
+    padding-top: 90px;
+    padding-left: auto;
+    text-align: center;
+    display: block;
+}
+
+.admin {
+    font-size: 25px;
+}
+
+.pimg1,
+.pimg2,
+.pimg3 {
     position: relative;
     opacity: 0.70;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
 
     /*
         fixed = WEBSITE
@@ -55,41 +79,39 @@
 
 }
 
-.pimg1{
+.pimg1 {
     background-image: url('../images/gambar1.jpg');
-    min-height:85%;
+    min-height: 85%;
 }
 
-.pimg2{
+.pimg2 {
     background-image: url('../images/gambar2.jpg');
     min-height: 400px;
 }
 
-.pimg3{
+.pimg3 {
     background-image: url('../images/gambar3.jpg');
     min-height: 400px;
 }
 
-.section{
+.section {
     text-align: center;
     padding: 50px 80px;
-
 }
 
-.section-light{
+.section-light {
     background-color: #f4f4f4;
     color: #666;
 
 }
 
-
-.section-dark{
+.section-dark {
     background-color: #282e34;
     color: #ddd;
 
 }
 
-.ptext{
+.ptext {
     position: absolute;
     top: 30%;
     width: 100%;
@@ -100,14 +122,14 @@
     text-transform: uppercase;
 }
 
-.ptext .border{
+.ptext .border {
     background-color: #111;
     color: #fff;
     padding: 20px;
 
 }
 
-.ptext .border.trans{
+.ptext .border.trans {
     background-color: transparent;
 }
 
@@ -120,7 +142,4 @@
     font-size: 30px;
     letter-spacing: 8px;
     text-transform: uppercase;
-} 
-p {
-    font-family: helvetica;
 }

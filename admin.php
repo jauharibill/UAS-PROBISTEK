@@ -1,5 +1,6 @@
 <?php
-    $page = 'artikel';
+    require 'functions.php';
+    $mahasiswa = query("SELECT * FROM mahasiswa");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Artikel | PROBISTEK</title>
+    <title>Admin | PROBISTEK</title>
     <link rel="icon" href="images/UIN.png">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -44,27 +45,48 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a class="nav-link <?php if($page=='home'){echo 'active';}?>" href="index.php">Home</a>
+                            <!-- <a class="nav-link <?php if($page=='home'){echo 'active';}?>" href="index.php"></a> -->
                         </li>
-                        <li>
-                            <a class="nav-link <?php if($page=='artikel'){echo 'active';}?>" href="artikel.php">Artikel</a>
-                        </li>
-                        <li>
-                            <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link <?php if($page=='artikel'){echo 'active';}?>" href="artikel.php"></a> -->
                         </li>
                     </ul>
-                    <a href="login.php">
-                        <button id="adminBtn" class="btn btn-success" type="button">Admin? Login</button>
+                    <a href="index.php">
+                        <button id="adminBtn" class="btn btn-danger" type="button">Logout!</button>
                     </a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <br><br><br><br><br>
+    <br><br><br>
 
     <center>
-        <h1>HALAMAN ARTIKEL</h1>
+        <h1>HALAMAN ADMIN</h1>
+        <table border="5" cellpadding="10" spacing="0">
+            <tr>
+                <th>No.</th>
+                <th>Aksi</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Email</th>
+                <th>Jurusan</th>
+                <th>Gambar</th>
+            </tr>
+            <?php $no = 1; ?>
+            <?php foreach ($mahasiswa as $row) : ?>
+            <tr>
+                <td><?= $no; ?></td>
+                <td>Edit | Hapus</td>
+                <td><?= $row["nama"]; ?></td>
+                <td><?= $row["nrp"]; ?></td>
+                <td><?= $row["email"]; ?></td>
+                <td><?= $row["jurusan"]; ?></td>
+                <td><?= $row["gambar"]; ?></td>
+            </tr>
+            <?php $no++; ?>
+            <?php endforeach;?>
+        </table>
     </center>
 
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
