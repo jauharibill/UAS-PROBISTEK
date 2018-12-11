@@ -16,6 +16,37 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        #badan {
+            background-color: #EFEEEC;
+        }
+
+        #tambahMhs {
+            margin-right: -29cm;
+        }
+
+        table.table-bordered{
+            border:5px solid black;
+            background-color: white;
+            width: 90%;
+        }
+
+        table.table-bordered > thead > tr {
+            border:3px solid black;
+        }
+
+        table.table-bordered > tbody > tr {
+            border:3px solid black;
+        }
+
+        table.table-bordered {
+            border: 3px solid black;
+        }
+        
+        table > caption {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -59,35 +90,56 @@
         </div>
     </header>
 
-    <br><br><br>
 
-    <center>
-        <h1>HALAMAN ADMIN</h1>
-        <table border="5" cellpadding="10" spacing="0">
-            <tr>
-                <th>No.</th>
-                <th>Aksi</th>
-                <th>Nama</th>
-                <th>NIM</th>
-                <th>Email</th>
-                <th>Jurusan</th>
-                <th>Gambar</th>
-            </tr>
-            <?php $no = 1; ?>
-            <?php foreach ($mahasiswa as $row) : ?>
-            <tr>
-                <td><?= $no; ?></td>
-                <td>Edit | Hapus</td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["nrp"]; ?></td>
-                <td><?= $row["email"]; ?></td>
-                <td><?= $row["jurusan"]; ?></td>
-                <td><?= $row["gambar"]; ?></td>
-            </tr>
-            <?php $no++; ?>
-            <?php endforeach;?>
-        </table>
-    </center>
+    <div id="badan">
+
+        <br><br><br>
+
+        <center>
+            <h1>HALAMAN ADMIN</h1>
+
+            <table class="table table-bordered">
+                <tr class="table-primary">
+                    <th>No.</th>
+                    <th>Aksi</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Email</th>
+                    <th>Jurusan</th>
+                    <th>Gambar</th>
+                </tr>
+                <?php $no = 1; ?>
+                <?php foreach ($mahasiswa as $row) : ?>
+                <tr>
+                    <td>
+                        <?= $no; ?>
+                    </td>
+                    <td>Edit | Hapus</td>
+                    <td>
+                        <?= $row["nama"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["nrp"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["email"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["jurusan"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["gambar"]; ?>
+                    </td>
+                </tr>
+                <?php $no++; ?>
+                <?php endforeach;?>
+                <caption>Tabel Mahasiswa Probistek</caption>
+            </table>
+            <a href="adminMhs/tambah.php">
+                <button id="tambahMhs" class="btn btn-success" type="button">Tambah Data</button>
+            </a>
+        </center>
+    </div>
 
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>

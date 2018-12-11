@@ -21,4 +21,21 @@
         return $rows;
     }
 
+    function tambah($data) {
+        global $conn;
+
+        //ambil data dari form
+        $nama = $data["nama"];
+        $nrp = $data["nrp"];
+        $email = $data["email"];
+        $jurusan = $data["jurusan"];
+        // $gambar = $data["gambar"];
+
+        //query insert data
+        $query = "INSERT INTO mahasiswa VALUES ('', '$nama', '$nrp', '$email', '$jurusan', '')";
+        
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
 ?>

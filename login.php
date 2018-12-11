@@ -15,6 +15,11 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        .login {
+            background-color: #efeeec;
+        }
+    </style>
 </head>
 
 <body class="login">
