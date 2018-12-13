@@ -1,6 +1,11 @@
 <?php
     require 'functions.php';
-    $mahasiswa = query("SELECT * FROM mahasiswa");
+    $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY NIM ASC");
+
+    //tombol cari diklik
+    if( isset($_POST["cari"])) {
+        $mahasiswa = cari($_POST["keyword"]);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +22,12 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
-        #badan {
+        body {
             background-color: #EFEEEC;
+        }
+
+        header {
+            background-color: white;
         }
 
         #tambahMhs {
@@ -75,12 +84,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li>
-                            <!-- <a class="nav-link <?php if($page=='home'){echo 'active';}?>" href="index.php"></a> -->
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link <?php if($page=='artikel'){echo 'active';}?>" href="artikel.php"></a> -->
-                        </li>
+                        <form class="form-inline my-2 my-lg-0" action="" method="post">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Masukkan keyword" aria-label="Search" name="keyword" autofocus autocomplete="off">
+                            <button class="btn btn-success my-2 my-sm-0" type="submit" name="cari">Cari</button>
+                        </form>
                     </ul>
                     <a href="index.php">
                         <button id="adminBtn" class="btn btn-danger" type="button">Logout!</button>
@@ -101,7 +108,7 @@
             <table class="table table-bordered">
                 <tr class="table-primary">
                     <th>No.</th>
-                    <th>Aksi</th>
+                    <th colspan="2">Aksi</th>
                     <th>Nama</th>
                     <th>NIM</th>
                     <th>Email</th>
@@ -114,12 +121,43 @@
                     <td>
                         <?= $no; ?>
                     </td>
-                    <td>Edit | Hapus</td>
+                    <td>
+                        <a href="adminMhs/edit.php?id=<?= $row["id"];?>">
+                            <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                        </a>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalHapus<?= $row["id"];?>">
+                            Hapus
+                        </button>
+                        <div class="modal fade" id="modalHapus<?= $row["id"];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Hapus Data Mahasiswa</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Anda yakin ingin menghapus salah satu data Mahasiswa?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                        <a href="adminMhs/hapus.php?id=<?= $row["id"];?>">
+                                            <button type="button" class="btn btn-danger">Hapus</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td>
                         <?= $row["nama"]; ?>
                     </td>
                     <td>
-                        <?= $row["nrp"]; ?>
+                        <?= $row["NIM"]; ?>
                     </td>
                     <td>
                         <?= $row["email"]; ?>
@@ -138,6 +176,9 @@
             <a href="adminMhs/tambah.php">
                 <button id="tambahMhs" class="btn btn-success" type="button">Tambah Data</button>
             </a>
+
+            <br><br>
+
         </center>
     </div>
 

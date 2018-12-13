@@ -1,7 +1,12 @@
 <?php
     $page = 'mahasiswa';
     require 'functions.php';
-    $mahasiswa = query("SELECT * FROM mahasiswa");
+    $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY NIM ASC");
+
+    //Mesin Pencari Mahasiswa
+    if( isset($_POST["cari"])) {
+        $mahasiswa = cari($_POST["keyword"]);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +22,45 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        #cari {
+            margin-right: 2.7cm;
+        }
+
+        body {
+            background-color: #EFEEEC;
+        }
+
+        header {
+            background-color: white;
+        }
+
+        #tambahMhs {
+            margin-right: -29cm;
+        }
+
+        table.table-bordered{
+            border:5px solid black;
+            background-color: white;
+            width: 90%;
+        }
+
+        table.table-bordered > thead > tr {
+            border:3px solid black;
+        }
+
+        table.table-bordered > tbody > tr {
+            border:3px solid black;
+        }
+
+        table.table-bordered {
+            border: 3px solid black;
+        }
+        
+        table > caption {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,42 +99,45 @@
                             <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
                         </li>
                     </ul>
-                    <a href="login.php">
-                        <button id="adminBtn" class="btn btn-success" type="button">Admin? Login</button>
-                    </a>
+                    <form class="form-inline my-2 my-lg-0" action="" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Masukkan keyword" aria-label="Search" name="keyword" autofocus autocomplete="off">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit" name="cari"  id="cari">Cari</button>
+                    </form>
                 </div>
             </nav>
         </div>
     </header>
+    <div id="badan">
+        <br><br><br>
+        <center>
+            <h1>HALAMAN MAHASISWA</h1>
+            <table class="table table-bordered">
+                <tr class="table-primary">
+                    <th>No.</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Email</th>
+                    <th>Jurusan</th>
+                    <th>Gambar</th>
+                </tr>
+                <?php $no = 1; ?>
+                <?php foreach ($mahasiswa as $row) : ?>
+                <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $row["nama"]; ?></td>
+                    <td><?= $row["NIM"]; ?></td>
+                    <td><?= $row["email"]; ?></td>
+                    <td><?= $row["jurusan"]; ?></td>
+                    <td><?= $row["gambar"]; ?></td>
+                </tr>
+                <?php $no++; ?>
+            <?php endforeach;?>
+            </table>
 
-    <br><br><br>
+            <br><br><br>
 
-    <center>
-        <h1>HALAMAN MAHASISWA</h1>
-        <table border="5" cellpadding="10" spacing="0">
-            <tr>
-                <th>No.</th>
-                <th>Nama</th>
-                <th>NIM</th>
-                <th>Email</th>
-                <th>Jurusan</th>
-                <th>Gambar</th>
-            </tr>
-            <?php $no = 1; ?>
-            <?php foreach ($mahasiswa as $row) : ?>
-            <tr>
-                <td><?= $no; ?></td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["nrp"]; ?></td>
-                <td><?= $row["email"]; ?></td>
-                <td><?= $row["jurusan"]; ?></td>
-                <td><?= $row["gambar"]; ?></td>
-            </tr>
-            <?php $no++; ?>
-        <?php endforeach;?>
-        </table>
-    </center>
-
+        </center>
+    </div>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

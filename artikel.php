@@ -15,6 +15,11 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        #badan {
+            background-color: #EFEEEC;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,20 +58,21 @@
                             <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
                         </li>
                     </ul>
-                    <a href="login.php">
-                        <button id="adminBtn" class="btn btn-success" type="button">Admin? Login</button>
-                    </a>
                 </div>
             </nav>
         </div>
     </header>
+    <div id="badan">
 
-    <br><br><br><br><br>
+        <br><br><br><br><br>
 
-    <center>
-        <h1>HALAMAN ARTIKEL</h1>
-    </center>
+        <center>
+            <h1>HALAMAN ARTIKEL</h1>
+        </center>
 
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    </div>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

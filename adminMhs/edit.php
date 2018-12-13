@@ -2,13 +2,19 @@
 
     require "../functions.php";
 
+    $id = $_GET["id"];
+
+    //query berdasarkan ID
+
+    $mahasiswa = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
+
     if( isset($_POST["submit"])) {
         
         //cek keberhasilan
-        if (tambah($_POST) > 0) {
+        if (edit($_POST) >= 0) {
             // echo "
             //     <script>
-            //         alert('data berhasil ditambahkan');
+            //         alert('data berhasil diubah');
             //         document.location.href= '../admin.php';
             //     </script>
             // ";
@@ -22,7 +28,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tambah Data Mahasiswa | PROBISTEK</title>
+    <title>Edit Data Mahasiswa | PROBISTEK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/UIN.png">
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
@@ -53,6 +59,7 @@
             padding-top: 2cm;
             text-align: center;
         }
+
         #kembali {
             margin-left: 0.5cm;
         }
@@ -99,34 +106,35 @@
             </nav>
         </div>
     </header>
-    <h1>TAMBAH DATA MAHASISWA</h1>
+    <h1>EDIT DATA MAHASISWA</h1>
     <form method="post" action="">
+        <input type="hidden" name="id" value="<?= $mahasiswa["id"];?>">
         <div class="form-group row">
             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Mahasiswa"
-                    required>
+                    required value="<?= $mahasiswa["nama"];?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="nrp" class="col-sm-2 col-form-label">NIM</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="nrp" name="NIM" placeholder="Masukkan NIM Mahasiswa"
-                    required>
+                    required value="<?= $mahasiswa["NIM"];?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
                 <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email Mahasiswa"
-                    required>
+                    required value="<?= $mahasiswa["email"];?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="jurusan" class="col-sm-2 col-form-label">Jurusan</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Masukkan Jurusan Mahasiswa"
-                    required>
+                    required value="<?= $mahasiswa["jurusan"];?>">
             </div>
         </div>
         <div class="form-group row">
@@ -136,9 +144,6 @@
                 <input type="file" class="custom-file-input" id="customFile">
             </div>
         </div>
-
-        <br>
-
         <div class="form-group row">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalSimpan">
@@ -153,7 +158,7 @@
                             <h5 class="modal-title" id="exampleModalLongTitle">Simpan Data?</h5>
                         </div>
                         <div class="modal-body">
-                            Simpan Data Mahasiswa?
+                            Simpan perubahan data terbaru?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -179,7 +184,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Anda tidak ingin menyelesaikan pengisian form?                            
+                            Tidak ada data yang ingin diubah?                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Tidak</button>
