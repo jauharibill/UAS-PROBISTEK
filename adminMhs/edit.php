@@ -63,6 +63,14 @@
         #kembali {
             margin-left: 0.5cm;
         }
+
+        #labelGambar {
+            padding-right: 149px;
+        }
+
+        #gambarUbah {
+            padding-left: 4.5cm;
+        }
     </style>
 </head>
 
@@ -107,8 +115,9 @@
         </div>
     </header>
     <h1>EDIT DATA MAHASISWA</h1>
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $mahasiswa["id"];?>">
+        <input type="hidden" name="gambarLama" value="<?= $mahasiswa["gambar"];?>">
         <div class="form-group row">
             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
@@ -138,10 +147,13 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="" class="col-sm-2 col-form-label">Gambar</label>
+            <label for="gambar" class="col-sm-2 col-form-label" id="labelGambar">Gambar</label>
             <div class="col-sm-9 custom-file">
-                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="gambar"><?= $mahasiswa["gambar"]?></label><br>
+                <input type="file" class="custom-file-input" id="gambar" name="gambar">
+            </div>
+            <div class="col-sm-3" id="gambarUbah">
+                <img src="../images/<?= $mahasiswa['gambar'];?>" alt="" width="80">
             </div>
         </div>
         <div class="form-group row">

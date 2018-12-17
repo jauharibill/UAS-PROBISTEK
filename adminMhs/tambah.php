@@ -12,7 +12,7 @@
             //         document.location.href= '../admin.php';
             //     </script>
             // ";
-        } header('Location: ../admin.php');
+        } header ('Location: ../admin.php');
     }
 ?>
 
@@ -100,7 +100,7 @@
         </div>
     </header>
     <h1>TAMBAH DATA MAHASISWA</h1>
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <div class="form-group row">
             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
@@ -130,10 +130,10 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="" class="col-sm-2 col-form-label">Gambar</label>
+            
             <div class="col-sm-9 custom-file">
-                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="gambar">Pilih Gambar</label>
+                <input type="file" class="custom-file-input" id="gambar" name="gambar">
             </div>
         </div>
 

@@ -55,6 +55,15 @@
         table > caption {
             color: black;
         }
+
+        #tableRow {
+            height: 50px;
+        }
+
+        .table > tbody > tr > td {
+            vertical-align: middle;
+        }
+        
     </style>
 </head>
 
@@ -117,7 +126,7 @@
                 </tr>
                 <?php $no = 1; ?>
                 <?php foreach ($mahasiswa as $row) : ?>
-                <tr>
+                <tr id="tableRow">
                     <td>
                         <?= $no; ?>
                     </td>
@@ -166,7 +175,7 @@
                         <?= $row["jurusan"]; ?>
                     </td>
                     <td>
-                        <?= $row["gambar"]; ?>
+                        <img src="images/<?= $row["gambar"]; ?>" alt="" width="50">
                     </td>
                 </tr>
                 <?php $no++; ?>

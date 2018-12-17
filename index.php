@@ -59,9 +59,6 @@
                             <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
                         </li>
                     </ul>
-                    <a href="login.php">
-                        <button id="adminBtn" class="btn btn-success" type="button">Admin? Login</button>
-                    </a>
                 </div>
             </nav>
         </div>
