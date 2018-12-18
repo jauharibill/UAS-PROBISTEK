@@ -58,6 +58,9 @@
                         <li>
                             <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
                         </li>
+                        <li>
+                            <a class="nav-link <?php if($page=='about'){echo 'active';}?>" href="about.php">About</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

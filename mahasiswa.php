@@ -107,6 +107,9 @@
                         <li>
                             <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
                         </li>
+                         <li>
+                            <a class="nav-link <?php if($page=='about'){echo 'active';}?>" href="about.php">About</a>
+                        </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="" method="post">
                         <input class="form-control mr-sm-2" type="search" placeholder="Masukkan keyword" aria-label="Search" name="keyword" autofocus autocomplete="off">

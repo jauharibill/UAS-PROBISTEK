@@ -1,5 +1,5 @@
 <?php
-    $page = 'artikel';
+    $page = 'about';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Artikel | PROBISTEK</title>
+    <title>About | PROBISTEK</title>
     <link rel="icon" href="images/UIN.png">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -70,7 +70,17 @@
         <br><br><br><br><br>
 
         <center>
-            <h1>HALAMAN ARTIKEL</h1>
+            <form action="about.php" method="get">
+      <p>Tentang PROBISTEK</p>
+      <label>:
+        <select>
+          <option value="lele">Sejarah</option>
+          <option value="mas">Sistem Kepengurusan</option>
+          <option value="teri">Visi Misi</option>
+          <option value="tongkol">Tujuan</option>
+        </select>
+      </label>
+    </form>
         </center>
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
