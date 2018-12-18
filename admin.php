@@ -1,4 +1,9 @@
 <?php
+    session_start();
+
+    if( !isset($_SESSION["login"])) {
+        header("Location: login.php");
+    }
     require 'functions.php';
     $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY NIM ASC");
 
@@ -98,7 +103,7 @@
                             <button class="btn btn-success my-2 my-sm-0" type="submit" name="cari">Cari</button>
                         </form>
                     </ul>
-                    <a href="index.php">
+                    <a href="logout.php">
                         <button id="adminBtn" class="btn btn-danger" type="button">Logout!</button>
                     </a>
                 </div>

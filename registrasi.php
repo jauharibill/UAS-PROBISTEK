@@ -1,40 +1,15 @@
 <?php
-    session_start();
-
-    if( isset($_SESSION["login"])) {
-        header("Location: admin.php");
-        exit;
-    }
-    require "functions.php";
-
-    if( isset($_POST["login"])) {
-       
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-
-        $result = mysqli_query($conn, "SELECT * FROM admin WHERE username = '$username'");
-
-        //cek username
-        if( mysqli_num_rows($result) === 1) {
-            
-            //cek password
-            $row = mysqli_fetch_assoc($result);
-            if( password_verify($password, $row["password"]) ) {
-
-                //set session
-                $_SESSION["login"] = true;
-
-                header("Location: admin.php");
-                exit;
-            }
-        }
-
-        $error = true;
-        if ($error) {
+    require 'functions.php';
+    if ( isset($_POST["register"])) {
+        
+        if( registrasi($_POST) > 0 ) {
             echo "<script>
-                    alert('username atau password salah');
+                    alert ('User baru berhasil ditambahkan');
                 </script>";
+        } else {
+            echo mysqli_error($conn);
         }
+    
     }
 ?>
 
@@ -45,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login | Probistek</title>
+    <title>Register | Probistek</title>
     <link rel="icon" href="images/UIN.png">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -57,11 +32,15 @@
         }
 
         #username {
-            margin-left: 12.8cm;
+            margin-left: 13cm;
         }
 
         #password {
-            margin-left: 12.8cm;
+            margin-left: 13cm;
+        }
+
+        #password2 {
+            margin-left: 13cm;
         }
     </style>
 </head>
@@ -71,17 +50,21 @@
 
         <img src="images/probistek3.png">
         <br><br>
-        <p class="admin"><b>Login Admin</b></p>
+        <p class="admin"><b>Registrasi</b></p>
         <br>
         <form action="" method="POST">
             <ul>
                 <input class="form-control col-md-3" type="text" name="username" id="username" placeholder="Masukkan Username" autocomplete="off">
             </ul>
-            <ul>
+            <ul>      
                 <input class="form-control col-md-3" type="password" name="password" id="password" placeholder="Masukkan Password">
             </ul>
-            <br>
-            <button class="btn btn-success" type="submit" name="login">Login!</button>
+            <ul>
+                <input class="form-control col-md-3" type="password" name="password2" id="password2" placeholder="Konfirmasi Password">
+            </ul>    
+            <a href="login.php">
+                <button class="btn btn-success" type="submit" name="register">Register!</button>
+            </a>
         </form>
 
 
