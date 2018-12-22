@@ -1,16 +1,12 @@
-body,
-html {
-    /* height: 100%;
+*{
+     font-family: helvetica;
     margin: 0;
-    font-weight: 400;
-    line-height: 1.8em;
-    color: #666; */
-    font-family: helvetica;
+    padding: 0;
 }
 
 .image {
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 
 .col-6.contact {
@@ -62,84 +58,103 @@ table.contact2 {
     font-size: 25px;
 }
 
-.pimg1,
-.pimg2,
-.pimg3 {
-    position: relative;
-    opacity: 0.70;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    /*
-        fixed = WEBSITE
-        scroll = normal
-    */
-    background-attachment: fixed;
-
-}
-
-.pimg1 {
-    background-image: url('../images/gambar1.jpg');
-    min-height: 85%;
-}
-
-.pimg2 {
-    background-image: url('../images/gambar2.jpg');
-    min-height: 400px;
-}
-
-.pimg3 {
-    background-image: url('../images/gambar3.jpg');
-    min-height: 400px;
-}
-
-.section {
-    text-align: center;
-    padding: 50px 80px;
-}
-
-.section-light {
-    background-color: #f4f4f4;
-    color: #666;
-
-}
-
-.section-dark {
-    background-color: #282e34;
-    color: #ddd;
-
-}
-
-.ptext {
-    position: absolute;
-    top: 30%;
+/*------------------SLider------------*/
+#slider {
     width: 100%;
-    text-align: center;
-    color: #000;
-    font-size: 27px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
 }
 
-.ptext .border {
-    background-color: #111;
-    color: #fff;
-    padding: 20px;
-
-}
-
-.ptext .border.trans {
-    background-color: transparent;
-}
-
-.tes {
-    position: absolute;
+.carousel-caltion {
     top: 50%;
-    width: 100%;
-    text-align: center;
+    transform: translateY(-50%);
+    bottom: initial!important;
+}
+
+.carousel-caption h5{
     color: #fff;
-    font-size: 30px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
+    font-size: 42px;
+}
+.carousel-caption p{
+    font-weight: 600;
+    font-size: 45px;
+}
+/*-----------Visi dan Misi-------*/
+#visimisi{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#visimisi h2{
+    text-align: center;
+    color: #555 !important;
+    padding-top: 10px;
+}
+#visimisi h2::after { 
+    content: '';
+    background: black;
+    display: block;
+    height: 5px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+#visimisi .visi{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+}
+.about-content {
+    padding-top: 20px;
+}
+
+/*---------jurusan------*/
+
+#services {
+    background-image: linear-gradient(rgba(0,0,0,0.8), 
+        rgba(0,0,0,0.8)),url(../images/batubata.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #ffff!important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;   
+}
+
+#services h2 {
+    text-align: center;
+    color: #efefef !important;
+    padding-bottom: 5px;
+}
+/*css garis di bawah tulisan atau judul*/
+#services h2::after { 
+    content: '';
+    background: #efefef;
+    display: block;
+    height: 4px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+.services {
+    margin-top: 40px;
+}
+/*mengatur ada lingkaran di samping icon sama memper besar icon*/
+.icon {
+    font-size: 35px; /* <- besar kecil gambar*/
+    margin: 20px auto;
+    padding: 20px;
+    height: 90px;
+    width: 90px;
+    border: solid  1px #fff;
+    border-radius: 50%; 
+}
+#services p {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+/*mengatur munculnya warna saat cursor di aarahkan ke icon jurusan
+setiap spasi setelah ":" berpengaruh*/
+.services .col-md-4:hover {
+    background: #007bff;
+    cursor: pointer;
+    transition: 0.7s;
 }

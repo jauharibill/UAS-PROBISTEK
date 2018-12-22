@@ -9,16 +9,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PROBISTEK</title>
+
+    <title>PROBISTEK || Program Inovasi Bisnis Teknologi</title>
     <link rel="icon" href="images/UIN.png">
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> 
+    </script>
+
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!--link icon-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -67,111 +76,107 @@
         </div>
     </header>
     <!--------Slideshow Image--------->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="images/gambar1.jpg" alt="First slide">
+<div id="slider">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block img-fluid" src="images/slide1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="images/slide2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="images/slide3.jpg" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="images/slide4.jpg" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="images/gambar2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="images/gambar3.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
-    <!-- Halaman Index -->
-
-    <!-- <div class="pimg1">
-        <div class="ptext">
-            <span class="border">
-                HALAMAN INDEX
-            </span>
-        </div>
-        <p class="tes">INI HANYA CONTOH</p>
-    </div>
-
-
-    <section class="section section-dark">
-        <h2>DOSEN</h2>
+    <!----------Visi Dan Misi------->
+<section id="visimisi">
+    <div class="container">
+        <h2>VISI & MISI</h2>
         <div class="row">
-            <div class="col-md-4 col- ">
-                <img class="img-fluid" src="images/masayom.jpg" style="height: 150px;">
-                <p>Ayyom Muharrom</p>
+            <div class="col-md-6 visi">
+                <h3>Visi</h3>
+                <div class="about-content">
+                    Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. 
+                </div>
             </div>
-            <div class="col-md-4 col-sm-6 ">
-                <img class="img-fluid" src="images/masbill.jpg" style="height: 150px;">
-                <p>Bill Tanthowi Jauhari</p>
+            <div class="col-md-6 visi">
+                <h3>Misi</h3>
+                <div class="about-content">
+                    Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf.
+                </div>
             </div>
-            <div class="col-md-4 col-sm-6 ">
-                <img class="img-fluid" src="images/mbkeni.jpg" style="height: 150px;">
-                <p>Nur Aini</p>
-            </div>
-    </section>
-    <div class="pimg2">
-        <div class="ptext">
-            <span class="border trans">
-                PROBISTEK
-            </span>
         </div>
     </div>
-
-
-    <section class="section section-dark">
-        <h2>Title Second Text </h2>
-        <p>
-            Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
-            Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak
-            dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak
-            hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan
-            apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang
-            menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing
-            seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.
-            Mengapa kita menggunakannya?
-        </p>
-    </section>
-    <div class="pimg3">
-        <div class="ptext">
-            <span class="border trans">
-                UAS RPOBISTEK
-            </span>
+</section>
+    <!--------------Jurusan------------>
+<section id="services">
+    <div class="container">
+        <h2>JURUSAN</h2>
+        <div class="row services">
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                    <i class="fa fa-line-chart"></i>
+                </div>
+                <h3>Computer Accounting</h3>
+                <p>Komputer Akuntansi adalah jurusan yang menjuru pada akuntansi di bidang Teknologi.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                    <i class="fa fa-desktop"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Web Development adalah jurusan yang menjuru pada bahasa pemrograman dalam membuat website(html/css/php/javaskrip/dll).</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                    <i class="fa fa-paint-brush"></i>
+                </div>
+                <h3>Design Grafis</h3>
+                <p>Design Grafis adalah jurusan yang menjuru terhadap design.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                    <i class="fa fa-book"></i>
+                </div>
+                <h3>English For Tourism</h3>
+                <p>Engllish For Tourism adalah jurusan yang menjuru pad seaking bahasa inggris untuk menjadi guid turis international.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                    <i class="fa fa-mobile"></i>
+                </div>
+                <h3>Mobile Development</h3>
+                <p>mobile Development adalah jurusan yang menjuru pada bahasa pemrograman dalam membuat App atau bahasa pemrograman java for app.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                    <i class="fa fa-tv"></i>
+                </div>
+                <h3>TV & Multimedia</h3>
+                <p>Web Development adalah jurusan yang menjuru pada bahasa pemrograman dalam membuat website(html/css/php/javaskrip/dll).</p>
+            </div>
         </div>
     </div>
-
-    <section class="section section-dark">
-        <h2>Title Third Text </h2>
-        <p>
-            Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
-            Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak
-            dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak
-            hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan
-            apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang
-            menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing
-            seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.
-            Mengapa kita menggunakannya?
-        </p>
-    </section> -->
-
-    <br><br><br><br><br>
-
-    <center>
-        <h1>HALAMAN INDEX</h1>
-    </center>
-    <script type="text/javascript" src="jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+</section>
 </body>
-
 </html>
