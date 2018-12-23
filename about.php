@@ -70,17 +70,16 @@
         <br><br><br><br><br>
 
         <center>
-            <form action="about.php" method="get">
-      <p>Tentang PROBISTEK</p>
-      <label>:
-        <select>
-          <option value="lele">Sejarah</option>
-          <option value="mas">Sistem Kepengurusan</option>
-          <option value="teri">Visi Misi</option>
-          <option value="tongkol">Tujuan</option>
-        </select>
-      </label>
-    </form>
+             <section id="artikel">
+                <img src="images/probistek.png" width="40%"> 
+                <br><br><br><br>
+    <div class="container">
+        <h1>PROBISTEK</h1>
+        <h4>Program Inovasi Bisnis Dan Teknologi</h4>
+        <br>
+        <div class="row">
+           <p>Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. </p>
+        </div>
         </center>
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
