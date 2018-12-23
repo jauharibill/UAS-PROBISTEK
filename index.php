@@ -137,9 +137,12 @@
                 <div class="icon">
                     <i class="fa fa-line-chart"></i>
                 </div>
+                <a href="akutansi.php" target="_blank" rel="nofollow">
                 <h3>Computer Accounting</h3>
-                <p>Komputer Akuntansi adalah jurusan yang menjuru pada akuntansi di bidang Teknologi.</p>
+                <p>Komputer Akuntansi adalah sebuah sistem akuntansi dimana komputer sebagai teknologi untuk menjalankan aplikasi yang digunakan dalam mengolah transaksi akuntansi dan sekaligus untuk menghasilkan laporan keuangan dalam sebuah perusahaan.</p>
+            </a>
             </div>
+        </form>
             <div class="col-md-4 text-center">
                 <div class="icon">
                     <i class="fa fa-desktop"></i>
@@ -178,5 +181,6 @@
         </div>
     </div>
 </section>
+</form>
 </body>
 </html>
