@@ -73,8 +73,9 @@
             </div>
              <div class="col-md-6 visi">
                 <div class="images">
-                   <img src="artikelkak.jpg">
+                   <img src="images/artikelkak.jpg" width="115%">
                 </div>
+            </div>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
