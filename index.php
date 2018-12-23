@@ -147,8 +147,10 @@
                 <div class="icon">
                     <i class="fa fa-desktop"></i>
                 </div>
+                <a href="web.php" target="_blank" rel="nofollow">
                 <h3>Web Development</h3>
                 <p>Web Development adalah jurusan yang menjuru pada bahasa pemrograman dalam membuat website(html/css/php/javaskrip/dll).</p>
+            </a>
             </div>
             <div class="col-md-4 text-center">
                 <div class="icon">
