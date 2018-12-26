@@ -143,8 +143,11 @@ table.contact2 {
     padding: 20px;
     height: 90px;
     width: 90px;
-    border: solid  1px #fff;
+    border: solid  3px #fff; /* <- mengatur ketebalan lingkaran*/
     border-radius: 50%; 
+}
+#services h3{
+    color: #fff !important;
 }
 #services p {
     font-size: 14px;
@@ -158,3 +161,121 @@ setiap spasi setelah ":" berpengaruh*/
     cursor: pointer;
     transition: 0.7s;
 }
+
+/*----------- price plans-----*/
+#price2 {
+    padding: 40px 0 ;
+    background: #efefef;
+}
+
+#price2 h2::after {
+    content: '';
+    background: #007bff; /*warna biru*/
+    display: block;
+    height: 4px;
+    width: 400px;/* mengatur panjang garis di bawah judul*/
+    margin: 20px auto 5px; 
+}
+.single-price {
+    margin: 10px auto;
+    display: inline;
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    transition: 0.5s;
+}
+/*memunculkan bentuk kotak
+saat kursor di arahkan*/
+.single-price:hover {
+    box-shadow: 0 2px 20px #333;
+}
+/*backgroun warna biru 
+pada tulisan judul harga*/
+#price2 .price-head {
+    background-color: green;
+    display: inline;
+    float: left;
+    padding: 10px 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.price-head h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-transform: uppercase;  
+}
+
+
+.price-head p {
+    font-size: 25px;
+    color: #ccc;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#price2 span {
+    font-size: 15px;
+}
+
+.price-content {
+    display: inline;
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.price-content ul li {
+    border-bottom:  1px solid #efefef; /*memberi efek garis*/
+    padding: 15px 10px; /*jarak tulisan*/
+    list-style: none; /*untuk menghilangkan tanda titik pada <li></li>*/
+}
+
+ul li:last-child {
+    border: none; /*menghilangkan efek garis di akhir bawah tulisan saja*/  
+}
+/* css untuk mengatur icon checklist centang */
+.fa-check-circle {
+    color: green;
+    margin-right: 10px;
+    font-size: 20px;
+}
+/* css untuk mengatur icon checklist silang */
+.fa-times-circle {
+    color: red;
+    margin-right: 10px;
+    font-size: 20px; 
+}
+/*mengatur tombol*/
+.price-button {
+    display: inline;
+    float: left;
+    padding: 15px 15px 30px;
+    text-align: center;
+    width: 100%;
+}
+/*backround button berbentuk tombol*/
+#price2 .buy-btn {
+    background-color: #27ae60;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px 50px;
+    transition: 0.5s;
+}
+/*saat cursor mengarah pada button,
+button berubah warna*/
+#price2 .buy-btn:hover{
+    border-color: 1px solid #fff;
+    background-color: green;
+}
+/*css agar tulisan pada button
+berwarna, tidak tertutup warna border*/
+a{
+    text-decoration: none !important; 
+    color: #fff !important;
+}
+

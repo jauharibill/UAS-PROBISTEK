@@ -22,13 +22,14 @@
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <!--link icon-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -183,6 +184,82 @@
         </div>
     </div>
 </section>
-</form>
+<!----------------PRICE PLANS------------>
+<section id="price2">
+    <div class="container">
+        <h2>BIAYA PERKULIAHAN</h2>
+        <div class="row">
+            <!------kolom harga 1----->
+            <div class="col-md-6">
+                <div class="single-price">
+                    <div class="price-head">
+                        <h2>PENDIDIKAN 1 TAHUN</h2>
+                        <p>Rp. 3.000.000/<span>SEMESTER</span></p>
+                    </div>
+                    <div class="price-content">
+                        <ul>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Iuran Wisuda
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Uang Laboraturium
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Uang Praktek
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Uang Gedung
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Seragam Praktek
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Almameter
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-button">
+                        <a href="#"class="buy-btn">DAFTAR</a>
+                    </div>
+                </div>
+            </div>
+            <!------kolom harga 2----->
+            <div class="col-md-6">
+                <div class="single-price">
+                    <div class="price-head">
+                        <h2>PENDIDIKAN 2 TAHUN</h2>
+                        <p>Rp. 2.000.000/<span>SEMESTER</span></p>
+                    </div>
+                    <div class="price-content">
+                        <ul>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Iuran Wisuda
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Uang Laboraturium
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Uang Praktek
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Uang Gedung
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Seragam Peraktek
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>Almameter
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-button">
+                        <a href="#"class="buy-btn">DAFTAR</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
 </body>
 </html>
