@@ -278,4 +278,16 @@ a{
     text-decoration: none !important; 
     color: #fff !important;
 }
+/*---------------Footer------------*/
+#footer {
+    background: #333;
+    color: #fff;
+    padding: 12px;
+}
+
+.fa-heart-o {
+    margin: 3px;
+    color: red;
+}
+
 

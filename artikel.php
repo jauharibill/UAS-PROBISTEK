@@ -13,6 +13,11 @@
     <link rel="icon" href="images/UIN.png">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+
+     <!--link icon-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
@@ -76,6 +81,12 @@
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
+<!--------------------footer--------------------->
+<section id="footer">
+    <div class="container text-center">
+        <p>Made With <i class="fa fa-heart-o"></i> by Probistek Developer</p>
+    </div>
+</section>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
