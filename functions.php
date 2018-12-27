@@ -44,6 +44,49 @@
         return mysqli_affected_rows($conn);
     }
 
+    function tambah2($data) {
+        global $conn;
+
+        //ambil data dari form
+        $nama = htmlspecialchars($data["nama"]);
+        $nip = htmlspecialchars($data["nip"]);
+        $jabatan = htmlspecialchars($data["jabatan"]);
+        
+        //upload gambar
+        $gambar = upload();
+        if( !$gambar) {
+            return false;
+        }
+
+        //query insert data
+        $query = "INSERT INTO staf VALUES ('', '$nama', '$nip', '$jabatan', '$gambar')";
+        
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+
+    function tambah3($data) {
+        global $conn;
+
+        //ambil data dari form
+        $judul = htmlspecialchars($data["judul"]);
+        $isi = htmlspecialchars($data["isi"]);
+        
+        //upload gambar
+        $gambar = upload();
+        if( !$gambar) {
+            return false;
+        }
+
+        //query insert data
+        $query = "INSERT INTO artikel VALUES ('', '$judul', '$isi', '$gambar')";
+        
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+
     function upload() {
         
         $namaFile = $_FILES['gambar']['name'];
@@ -96,6 +139,12 @@
         return mysqli_affected_rows($conn);
     }
 
+    function hapus2($nama) {
+        global $conn;
+        mysqli_query($conn, "DELETE FROM staf WHERE id = $nama");
+        return mysqli_affected_rows($conn);
+    }
+
     function edit($data) {
         global $conn;
 
@@ -122,6 +171,31 @@
         return mysqli_affected_rows($conn);
     }
 
+    function edit2($data) {
+        global $conn;
+
+        //ambil data dari form
+        $id = $data["id"];
+        $nama = htmlspecialchars($data["nama"]);
+        $nip = htmlspecialchars($data["nip"]);
+        $jabatan = htmlspecialchars($data["jabatan"]);
+        $gambarLama = htmlspecialchars($data["gambarLama"]);
+        
+        //cek apakah admin memilih gambar baru
+        if( $_FILES['gambar']['error'] === 4) {
+            $gambar = $gambarLama;
+        } else {
+            $gambar = upload();
+        }
+
+        //query insert data
+        $query = "UPDATE staf SET nama = '$nama', nip = '$nip', jabatan = '$jabatan', gambar = '$gambar' WHERE id = $id";
+        
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+
     function cari($keyword) {
         $query = "SELECT * FROM mahasiswa
                     WHERE
@@ -129,6 +203,16 @@
                   NIM LIKE '%$keyword%' OR
                   email LIKE '%$keyword%' OR
                   jurusan LIKE '%$keyword%'
+        ";
+        return query($query);
+    }
+
+    function cari2($keyword) {
+        $query = "SELECT * FROM staf
+                    WHERE
+                  nama LIKE '%$keyword%' OR
+                  nip LIKE '%$keyword%' OR
+                  jabatan LIKE '%$keyword%'
         ";
         return query($query);
     }

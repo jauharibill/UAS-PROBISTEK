@@ -7,23 +7,17 @@
 
     require "../functions.php";
 
-    $id = $_GET["id"];
-
-    //query berdasarkan ID
-
-    $mahasiswa = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
-
     if( isset($_POST["submit"])) {
         
         //cek keberhasilan
-        if (edit($_POST) >= 0) {
+        if (tambah2($_POST) > 0) {
             // echo "
             //     <script>
-            //         alert('data berhasil diubah');
+            //         alert('data berhasil ditambahkan');
             //         document.location.href= '../admin.php';
             //     </script>
             // ";
-        } header('Location: index.php');
+        } header ('Location: index.php');
     }
 ?>
 
@@ -33,7 +27,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Edit Data Mahasiswa | PROBISTEK</title>
+    <title>Tambah Data Staf | PROBISTEK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/UIN.png">
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
@@ -64,7 +58,6 @@
             padding-top: 2cm;
             text-align: center;
         }
-
         #kembali {
             margin-left: 0.5cm;
         }
@@ -119,48 +112,39 @@
             </nav>
         </div>
     </header>
-    <h1>EDIT DATA MAHASISWA</h1>
+    <h1>TAMBAH DATA STAF</h1>
     <form method="post" action="" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?= $mahasiswa["id"];?>">
-        <input type="hidden" name="gambarLama" value="<?= $mahasiswa["gambar"];?>">
         <div class="form-group row">
             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Mahasiswa"
-                    required value="<?= $mahasiswa["nama"];?>">
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Staf"
+                    required>
             </div>
         </div>
         <div class="form-group row">
-            <label for="nrp" class="col-sm-2 col-form-label">NIM</label>
+            <label for="nrp" class="col-sm-2 col-form-label">NIP</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nrp" name="NIM" placeholder="Masukkan NIM Mahasiswa"
-                    required value="<?= $mahasiswa["NIM"];?>">
+                <input type="text" class="form-control" id="nip" name="nip" placeholder="Masukkan NIP Staf"
+                    required>
             </div>
         </div>
         <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <label for="email" class="col-sm-2 col-form-label">Jabatan</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email Mahasiswa"
-                    required value="<?= $mahasiswa["email"];?>">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="jurusan" class="col-sm-2 col-form-label">Jurusan</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Masukkan Jurusan Mahasiswa"
-                    required value="<?= $mahasiswa["jurusan"];?>">
+                <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Masukkan Jabatan Staf"
+                    required>
             </div>
         </div>
         <div class="form-group row">
             <label for="gambar" class="col-sm-2 col-form-label" id="labelGambar">Gambar</label>
             <div class="col-sm-9 custom-file">
-                <label class="custom-file-label" for="gambar"><?= $mahasiswa["gambar"]?></label><br>
+                <label class="custom-file-label" for="gambar">Pilih Gambar</label>
                 <input type="file" class="custom-file-input" id="gambar" name="gambar">
             </div>
-            <div class="col-sm-3" id="gambarUbah">
-                <img src="../images/<?= $mahasiswa['gambar'];?>" alt="" width="80">
-            </div>
         </div>
+
+        <br>
+
         <div class="form-group row">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalSimpan">
@@ -175,7 +159,7 @@
                             <h5 class="modal-title" id="exampleModalLongTitle">Simpan Data?</h5>
                         </div>
                         <div class="modal-body">
-                            Simpan perubahan data terbaru?
+                            Simpan Data Staf?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -201,7 +185,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Tidak ada data yang ingin diubah?                            
+                            Anda tidak ingin menyelesaikan pengisian form?                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Tidak</button>

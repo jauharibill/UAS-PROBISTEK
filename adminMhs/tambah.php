@@ -1,9 +1,9 @@
 <?php
-     session_start();
+    session_start();
 
-     if( !isset($_SESSION["login"])) {
-         header("Location: ../login.php");
-     }
+    if( !isset($_SESSION["login"])) {
+        header("Location: ../login.php");
+    }
 
     require "../functions.php";
 
@@ -17,7 +17,7 @@
             //         document.location.href= '../admin.php';
             //     </script>
             // ";
-        } header ('Location: ../admin.php');
+        } header ('Location: index.php');
     }
 ?>
 
@@ -61,6 +61,14 @@
         #kembali {
             margin-left: 0.5cm;
         }
+
+        #labelGambar {
+            padding-right: 149px;
+        }
+
+        #gambarUbah {
+            padding-left: 4.5cm;
+        }
     </style>
 </head>
 
@@ -97,7 +105,7 @@
                             <!-- <a class="nav-link <?php if($page=='artikel'){echo 'active';}?>" href="artikel.php"></a> -->
                         </li>
                     </ul>
-                    <a href="../index.php">
+                    <a href="../login.php">
                         <button id="adminBtn" class="btn btn-danger" type="button">Logout!</button>
                     </a>
                 </div>
@@ -135,7 +143,7 @@
             </div>
         </div>
         <div class="form-group row">
-            
+            <label for="gambar" class="col-sm-2 col-form-label" id="labelGambar">Gambar</label>
             <div class="col-sm-9 custom-file">
                 <label class="custom-file-label" for="gambar">Pilih Gambar</label>
                 <input type="file" class="custom-file-input" id="gambar" name="gambar">
@@ -188,7 +196,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Tidak</button>
-                            <a href="../admin.php">
+                            <a href="index.php">
                                 <button type="button" class="btn btn-danger">Ya</button>
                             </a>
                         </div>

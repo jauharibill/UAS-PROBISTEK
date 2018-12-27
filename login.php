@@ -52,7 +52,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
-        .login {
+        body {
             background-color: #efeeec;
         }
 
@@ -63,11 +63,19 @@
         #password {
             margin-left: 12.8cm;
         }
+
+        .back {
+            padding-left: 10px;
+            padding-top: 15cm;
+        }
+
     </style>
+
 </head>
 
-<body class="login">
-    <div>
+<body>
+    <a href="index.php" class="back" style="text-align: left;">&larr;Kembali ke awal</a>    
+    <div class="login">
 
         <img src="images/probistek3.png">
         <br><br>

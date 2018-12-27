@@ -3,6 +3,18 @@
     require 'functions.php';
     $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY NIM ASC");
 
+    //pagination
+    $jumlahDataPerHalaman = 10;
+    $jumlahData = count(query("SELECT * FROM mahasiswa"));
+    $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+    $halamanAktif = ( isset($_GET["p"]) ) ? $_GET["p"] : 1; 
+    $awalData = ( $jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+    $hasilHalamanPertama = ($halamanAktif-1)*$jumlahDataPerHalaman;
+    $noAwal = 0;
+    $no = ($hasilHalamanPertama + 1) - 1;
+
+    $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY NIM ASC LIMIT $awalData, $jumlahDataPerHalaman");
+
     //Mesin Pencari Mahasiswa
     if( isset($_POST["cari"])) {
         $mahasiswa = cari($_POST["keyword"]);
@@ -20,10 +32,6 @@
     <link rel="icon" href="images/UIN.png">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-     <!--link icon-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
@@ -111,9 +119,6 @@
                         <li>
                             <a class="nav-link <?php if($page=='mahasiswa'){echo 'active';}?>" href="mahasiswa.php">Mahasiswa</a>
                         </li>
-                         <li>
-                            <a class="nav-link <?php if($page=='about'){echo 'active';}?>" href="about.php">About</a>
-                        </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="" method="post">
                         <input class="form-control mr-sm-2" type="search" placeholder="Masukkan keyword" aria-label="Search" name="keyword" autofocus autocomplete="off">
@@ -136,8 +141,8 @@
                     <th>Jurusan</th>
                     <th>Gambar</th>
                 </tr>
-                <?php $no = 1; ?>
-                <?php foreach ($mahasiswa as $row) : ?>
+                
+                <?php foreach ($mahasiswa as $row): $no++; ?>
                 <tr id="tableRow">
                     <td><?= $no; ?></td>
                     <td><?= $row["nama"]; ?></td>
@@ -148,20 +153,30 @@
                         <img src="images/<?= $row['gambar']; ?>" alt="" width="50">
                     </td>
                 </tr>
-                <?php $no++; ?>
             <?php endforeach;?>
             </table>
+
+            <!-- navigasi -->
+            <?php if( $halamanAktif > 1) : ?>
+                <a href="?p=<?= $halamanAktif - 1; ?>">&larr;</a>
+            <?php endif; ?>
+                
+            <?php for( $i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                <?php if( $i == $halamanAktif) : ?>
+                    <a href="?p=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
+                <?php else : ?>
+                    <a href="?p=<?= $i; ?>"><?= $i; ?></a>
+                <?php endif; ?>
+            <?php endfor; ?>
+
+            <?php if( $halamanAktif < $jumlahHalaman ) : ?>
+                <a href="?p=<?= $halamanAktif + 1; ?>">&rarr;</a>
+            <?php endif; ?>
 
             <br><br><br>
 
         </center>
     </div>
-<!--------------------footer--------------------->
-<section id="footer">
-    <div class="container text-center">
-        <p>Made With <i class="fa fa-heart-o"></i> by Probistek Developer</p>
-    </div>
-</section>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
