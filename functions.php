@@ -1,7 +1,7 @@
 <?php
 
     //koneksi database
-    $conn = mysqli_connect("localhost", "root", "", "uas-probistek");
+    $conn = mysqli_connect("localhost", "root", "secret", "uasprobistek");
     //ambil data / query
     // $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
     // if ( !$result) {

@@ -1,43 +1,3 @@
-<?php
-    session_start();
-
-    if( isset($_SESSION["login"])) {
-        header("Location: admin.php");
-        exit;
-    }
-    require "functions.php";
-
-    if( isset($_POST["login"])) {
-       
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-
-        $result = mysqli_query($conn, "SELECT * FROM admin WHERE username = '$username'");
-
-        //cek username
-        if( mysqli_num_rows($result) === 1) {
-            
-            //cek password
-            $row = mysqli_fetch_assoc($result);
-            if( password_verify($password, $row["password"]) ) {
-
-                //set session
-                $_SESSION["login"] = true;
-
-                header("Location: admin.php");
-                exit;
-            }
-        }
-
-        $error = true;
-        if ($error) {
-            echo "<script>
-                    alert('username atau password salah');
-                </script>";
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +41,7 @@
         <br><br>
         <p class="admin"><b>Login Admin</b></p>
         <br>
-        <form action="" method="POST">
+        <form action="login-process.php" method="POST">
             <ul>
                 <input class="form-control col-md-3" type="text" name="username" id="username" placeholder="Masukkan Username" autocomplete="off">
             </ul>
